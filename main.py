@@ -11,7 +11,6 @@ import wikipediaapi #pip install Wikipedia-API
 
 app = Client("my_account")
 
-# Команда type
 @app.on_message(filters.command("type", prefixes=".") & filters.me)
 def type(_, msg):
     orig_text = msg.text.split(".type ", maxsplit=1)[1]
@@ -32,7 +31,6 @@ def type(_, msg):
         except FloodWait as e:
             sleep(e.x)
 
-# Команда взлома пентагона
 @app.on_message(filters.command("cm", prefixes=".") & filters.me)
 def commands(_, msg):
     to_send = msg.text.split(None, 1)
